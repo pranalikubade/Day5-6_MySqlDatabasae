@@ -21,7 +21,7 @@ public class MessageService {
     }
 
     public Message getById(long id) {
-        return messageRepo.findById((int) id).orElseThrow(() -> new CustomException("Message With Id:"+id + " Not Present"));
+        return messageRepo.findById(id).orElseThrow(() -> new CustomException("Message With Id:"+id + " Not Present"));
     }
 
     public Message updateMessage(long id, MessageDTO messageDTO) {
@@ -39,8 +39,8 @@ public class MessageService {
 
     public boolean deleteMessage(long id) {
         // Check if the message exists
-        if (messageRepo.existsById((int) id)) {
-            messageRepo.deleteById((int) id);
+        if (messageRepo.existsById(id)) {
+            messageRepo.deleteById(id);
             return true; // Deletion successful
         }
         return false; // Message not found

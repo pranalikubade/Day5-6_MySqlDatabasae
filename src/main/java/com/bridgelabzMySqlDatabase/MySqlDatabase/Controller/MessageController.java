@@ -49,10 +49,10 @@ public class MessageController {
     public ResponseEntity<ResponseDTO> deleteMessage(@PathVariable long id) {
         boolean deleted = messageService.deleteMessage(id);
         if (deleted) {
-            ResponseDTO responseDTO = new ResponseDTO("Data Deleted Successfully", null);
+            ResponseDTO responseDTO = new ResponseDTO("Data Deleted Successfully", id);
             return new ResponseEntity<>(responseDTO, HttpStatus.OK);
         } else {
-            ResponseDTO responseDTO = new ResponseDTO("Data Not Found", null);
+            ResponseDTO responseDTO = new ResponseDTO("Data Not Found", id);
             return new ResponseEntity<>(responseDTO, HttpStatus.NOT_FOUND);
         }
     }
