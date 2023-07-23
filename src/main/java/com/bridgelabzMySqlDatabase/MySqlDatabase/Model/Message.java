@@ -5,11 +5,15 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.*;
 
 import java.time.LocalDate;
 
 @Entity
 @Table(name = "TableInfo")
+@Data    //Instead of @Getter and @Setter
+@NoArgsConstructor      // Instead of Default Constructor
+
 public class Message {
 
     @Id
@@ -24,9 +28,6 @@ public class Message {
 
     private boolean completed;
 
-    public Message() {
-
-    }
 
     public Message(MessageDTO messageDTO) {
         this.updateMessage(messageDTO);
@@ -35,49 +36,8 @@ public class Message {
     public void updateMessage(MessageDTO messageDTO) {
         this.title = messageDTO.title;
         this.description = messageDTO.description;
-        this.DueDate= messageDTO.DueDate;
-        this.completed= messageDTO.completed;
+        this.DueDate = messageDTO.DueDate;
+        this.completed = messageDTO.completed;
     }
 
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public LocalDate getDueDate() {
-        return DueDate;
-    }
-
-    public void setDueDate(LocalDate dueDate) {
-        DueDate = dueDate;
-    }
-
-    public boolean isCompleted() {
-        return completed;
-    }
-
-    public void setCompleted(boolean completed) {
-        this.completed = completed;
-    }
 }
-

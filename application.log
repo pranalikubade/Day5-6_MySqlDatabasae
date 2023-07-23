@@ -1,0 +1,3 @@
+2023-07-22T11:44:27.479+05:30  WARN 11792 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-07-22T11:44:28.537+05:30 ERROR 11792 --- [restartedMain] c.b.M.MySqlDatabaseApplication           : Error level
+2023-07-22T11:44:28.538+05:30  WARN 11792 --- [restartedMain] c.b.M.MySqlDatabaseApplication           : Warn level
